@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    float comprimento; 
+    float largura;   
+    float area;      
+
+    printf("Calculadora de Area de Terreno\n\n");
+    
+    printf("Qual o COMPRIMENTO do terreno em metros? ");
+    scanf("%f", &comprimento);
+
+    printf("\nQual a LARGURA do terreno em metros? ");
+    scanf("%f", &largura);
+
+    area = comprimento * largura;
+
+    printf("\nO terreno tem %.2f metros de comprimento \ne %.2f metros de largura.\n\n", comprimento, largura);
+    printf("A AREA TOTAL do terreno é: %.2f metros quadrados.\n", area);
+
+    return 0;
+}
