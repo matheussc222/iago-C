@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int numeros[5];
+    int i, j, temp;
+
+    // Entrada dos números
+    printf("Digite 5 numeros:\n");
+    for (i = 0; i < 5; i++) {
+        scanf("%d", &numeros[i]);
+    }
+
+    // Ordenação Bubble Sort
+    for (i = 0; i < 5 - 1; i++) {
+        for (j = 0; j < 5 - i - 1; j++) {
+            if (numeros[j] > numeros[j + 1]) {
+                temp = numeros[j];
+                numeros[j] = numeros[j + 1];
+                numeros[j + 1] = temp;
+            }
+        }
+    }
+
+    // Saída
+    printf("Numeros em ordem crescente:\n");
+    for (i = 0; i < 5; i++) {
+        printf("%d ", numeros[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
