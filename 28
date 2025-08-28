@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(void) {
+    float valor, valorfinal, parcela;
+    int opcao, qtdParcelas;
+    
+    printf("Informe o valor da compra: ");
+    scanf("%f", &valor);
+    
+    printf("\nEscolha uma opção de pagamento:");
+    printf("\n\n1 - à vista com 10%% de desconto");
+    printf("\n\n2 - em 2 vezes (preço da etiqueta)");
+    if (valor > 100) {
+        printf("\n\n3 - de 3 a 10 vezes com 3%% de juros ao mês");
+    }
+    printf("\n\nOpção: ");
+    scanf("%d", &opcao);
+    
+    if (opcao == 1) {
+        valorfinal = valor - (valor * 0.10);
+        printf("\nO valor final é: R$ %.2f\n", valorfinal);
+    } 
+    else if (opcao == 2) {
+        parcela = valor / 2;
+        printf("\nO valor de cada parcela é: R$ %.2f\n", parcela);
+        printf("O valor total será: R$ %.2f\n", valor);
+    } 
+    else if (opcao == 3 && valor > 100) {
+        printf("\nDigite a quantidade de parcelas (3 a 10): ");
+        scanf("%d", &qtdParcelas);
+        
+        if (qtdParcelas >= 3 && qtdParcelas <= 10) {
+            valorfinal = valor * pow(1.03, qtdParcelas);
+            parcela = valorfinal / qtdParcelas;
+            printf("\nO valor total com juros será: R$ %.2f\n", valorfinal);
+            printf("O valor de cada parcela será: R$ %.2f\n", parcela);
+        } else {
+            printf("\nQuantidade de parcelas inválida!\n");
+        }
+    } 
+    else {
+        printf("\nOpção inválida!\n");
+    }
+    
+    return 0;
+}
