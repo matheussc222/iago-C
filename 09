@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    int numero, digito, soma = 0;
+
+    printf("Digite um numero: ");
+    scanf("%d", &numero);
+
+    // Enquanto o número não acabar
+    while (numero != 0) {
+        digito = numero % 10;          // Pega o último dígito
+        soma += digito * digito;       // Soma o quadrado do dígito
+        numero /= 10;                  // Remove o último dígito
+    }
+
+    printf("A soma dos quadrados dos digitos eh: %d\n", soma);
+
+    return 0;
+}
