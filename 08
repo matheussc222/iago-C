@@ -1,0 +1,23 @@
+#include <studio.h>
+#include <math.h>
+
+int main() {
+    double numero, raiz, raizcubica;
+    printf("Digite um número: ");
+    scanf("%lf", &numero);
+    
+    if(numero < 0){
+    printf("Não existe raiz de numero negativo\n");
+    }
+    
+    else{
+         raiz = pow (numero, 0.5);
+         printf("A raiz quadrada de %.lf é % .5lf\n", numero, raiz);
+    }
+    
+
+     raizcubica = pow(numero, 1.0/3.0);
+     printf("A raiz cúbica de %.lf é %.5lf\n", numero, raizcubica);
+    
+   return 0; 
+}
