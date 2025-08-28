@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    float valor, inflacionado;
+    printf("Insira o valor: ");
+    scanf("%f", &valor);
+    
+    if (valor >= 100){
+        inflacionado = valor * 1.20;
+    } else {
+        inflacionado = valor * 1.10;
+    }
+    
+    printf("O valor foi: %.2f \nO valor inflacionado agora é: %.2f \n", valor, inflacionado);
+    
+    return 0;
+}
