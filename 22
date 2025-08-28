@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char palavra[100];
+    int chave;
+    int i, tamanho;
+
+    printf("Digite a palavra a ser descriptografada: ");
+    scanf("%s", palavra);
+
+    printf("Digite a chave de criptografia (numero de deslocamento): ");
+    scanf("%d", &chave);
+
+    tamanho = strlen(palavra);
+
+    for (i = 0; i < tamanho; i++) {
+        char c = palavra[i];
+
+        if (c >= 'A' && c <= 'Z') {
+            palavra[i] = ((c - 'A' - chave + 26) % 26) + 'A';
+        } else if (c >= 'a' && c <= 'z') {
+            palavra[i] = ((c - 'a' - chave + 26) % 26) + 'a';
+        }
+        // outros caracteres permanecem iguais
+    }
+
+    printf("Palavra descriptografada: %s\n", palavra);
+
+    return 0;
+}
