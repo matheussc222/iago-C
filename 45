@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char operacao_escolhida[5];
+    char simbolo_operacao;
+    float numero1, numero2;
+    float resultado_final;
+
+    printf("Qual operacao voce quer? (+, -, * ou /): ");
+    fgets(operacao_escolhida, sizeof(operacao_escolhida), stdin);
+    simbolo_operacao = operacao_escolhida[0];
+
+    printf("Digite o primeiro numero: ");
+    scanf("%f", &numero1);
+
+    printf("Digite o segundo numero: ");
+    scanf("%f", &numero2);
+
+    switch (simbolo_operacao) {
+        case '+':
+            resultado_final = numero1 + numero2;
+            printf("\nO resultado da soma eh: %.2f\n", resultado_final);
+            break;
+
+        case '-':
+            resultado_final = numero1 - numero2;
+            printf("\nO resultado da subtracao eh: %.2f\n", resultado_final);
+            break;
+
+        case '*':
+            resultado_final = numero1 * numero2;
+            printf("\nO resultado da multiplicacao eh: %.2f\n", resultado_final);
+            break;
+
+        case '/':
+            if (numero2 != 0) {
+                resultado_final = numero1 / numero2;
+                printf("\nO resultado da divisao eh: %.2f\n", resultado_final);
+            } else {
+                printf("\nOps! Nao da pra dividir por zero.\n");
+            }
+            break;
+
+        default:
+            printf("\nOperacao invalida. Use apenas +, -, * ou /.\n");
+            break;
+    }
+
+    return 0;
+}
